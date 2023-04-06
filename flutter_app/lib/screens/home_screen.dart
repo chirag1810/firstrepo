@@ -6,14 +6,14 @@ import '../helpers/firebase_auth.dart';
 class HomeScreen extends StatefulWidget {
   final User user;
 
-  HomeScreen({required this.user});
+  HomeScreen({this.user});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late User _currentUser;
+  User _currentUser;
 
   @override
   void initState() {
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.deepOrangeAccent,
+          backgroundColor: Color.fromARGB(255, 11, 120, 209),
           title: Text('HomeScreen'),
           centerTitle: true,
         ),
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
             );
-            return logout!;
+            return logout;
           },
           child: Center(
             child: Column(

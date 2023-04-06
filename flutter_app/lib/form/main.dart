@@ -1,3 +1,64 @@
+// import 'package:firebase_core/firebase_core.dart';
+// import '../services/firebase_crud.dart';
+// import 'package:flutter/material.dart';
+
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp(
+//     options: DefaultFirebaseOptions.currentPlatform,
+//   );
+//   runApp(MyApp());
+// }
+
+import 'page/addpage.dart';
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCvt-HRhBjqre1VZ424jU487CZgpYvI6KE",
+//   authDomain: "storeinfo-9802b.firebaseapp.com",
+//   projectId: "storeinfo-9802b",
+//   storageBucket: "storeinfo-9802b.appspot.com",
+//   messagingSenderId: "141914334622",
+//   appId: "1:141914334622:web:8ade0671956d14bf0da28f",
+//   measurementId: "G-0N1MK9V705"
+// };
+
+// options: FirebaseOptions(
+//     apiKey: "AIzaSyCvt-HRhBjqre1VZ424jU487CZgpYvI6KE",
+//     appId: "1:141914334622:web:8ade0671956d14bf0da28f",
+//     messagingSenderId: "141914334622",
+//     projectId: "storeinfo-9802b")
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp();
+//   runApp(MyApp());
+// }
+
+class MyApp1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'FreeCode Spot',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+        brightness: Brightness.dark,
+      ),
+      home: AddPage(),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
 // import 'package:flutter/material.dart';
 
 // void main() {
@@ -113,62 +174,3 @@
 //     );
 //   }
 // }
-
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-
-// import 'fingerprint/main.dart';
-import 'screens/login_screen.dart';
-
-void main() async {
-//   const firebaseConfig = {
-//   apiKey: "AIzaSyDaZ3tHnJmLoDfdxz_aeh0lbkqi-51jw4I",
-//   authDomain: "aunthenticate-8eeee.firebaseapp.com",
-//   projectId: "aunthenticate-8eeee",
-//   storageBucket: "aunthenticate-8eeee.appspot.com",
-//   messagingSenderId: "738320766553",
-//   appId: "1:738320766553:web:4721713ca6c26c04d20348",
-//   measurementId: "G-8F57G8QB3Z"
-//  options: FirebaseOptions(
-//           apiKey: "AIzaSyDaZ3tHnJmLoDfdxz_aeh0lbkqi-51jw4I",
-//           appId: "1:738320766553:web:4721713ca6c26c04d20348",
-//           messagingSenderId: "738320766553",
-//           projectId: "aunthenticate-8eeee")
-// };
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Quick Onboarding',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.blue,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            textStyle: const TextStyle(
-              fontSize: 24.0,
-            ),
-            padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
-          ),
-        ),
-        textTheme: TextTheme(
-          displayLarge: TextStyle(
-            fontSize: 46.0,
-            color: Colors.blue.shade700,
-            fontWeight: FontWeight.w500,
-          ),
-          bodyLarge: const TextStyle(fontSize: 18.0),
-        ),
-      ),
-      home: LoginScreen(),
-    );
-  }
-}

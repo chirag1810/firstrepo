@@ -1,13 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseAuthHelper {
-  static Future<User?> registerUsingEmailPassword({
-    required String name,
-    required String email,
-    required String password,
+  static Future<User> registerUsingEmailPassword({
+    String name,
+    String email,
+    String password,
   }) async {
     FirebaseAuth auth = FirebaseAuth.instance;
-    User? user;
+    User user;
 
     try {
       UserCredential userCredential = await auth.createUserWithEmailAndPassword(
@@ -16,7 +16,7 @@ class FirebaseAuthHelper {
       );
 
       user = userCredential.user;
-      await user!.updateDisplayName(name);
+      await user.updateDisplayName(name);
       await user.reload();
       user = auth.currentUser;
     } on FirebaseAuthException catch (e) {
@@ -32,12 +32,12 @@ class FirebaseAuthHelper {
     return user;
   }
 
-  static Future<User?> signInUsingEmailPassword({
-    required String email,
-    required String password,
+  static Future<User> signInUsingEmailPassword({
+    String email,
+    String password,
   }) async {
     FirebaseAuth auth = FirebaseAuth.instance;
-    User? user;
+    User user;
 
     try {
       UserCredential userCredential = await auth.signInWithEmailAndPassword(
